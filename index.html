@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - iPortfolio Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .download-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .download-btn:hover {
+    background-color: #0056b3;
+     color: #fff;
+  }
+  .ellipsis-text {
+  white-space: normal !important;   /* allows wrapping */
+  word-break: break-word !important; /* breaks long words if needed */
+}
+
+  /* Portfolio Items Container */
+  #portfolio-items {
+    width: 100%;
+    margin-bottom: 100px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    #portfolio-items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    #portfolio-items {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  #portfolio-items .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  #portfolio-items .portfolio-content {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #f5f5f5;
+  }
+
+  #portfolio-items .portfolio-content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  #portfolio-items .portfolio-item:hover .portfolio-content img {
+    transform: scale(1.1);
+  }
+
+  #portfolio-items .portfolio-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  #portfolio-items .portfolio-item:hover .portfolio-info {
+    transform: translateY(0);
+  }
+
+  #portfolio-items .portfolio-info h4 {
+    margin: 10px 0 5px 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  #portfolio-items .portfolio-info p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #ccc;
+  }
+
+  #portfolio-items .portfolio-info a {
+    display: inline-block;
+    margin: 10px 5px 0 5px;
+    color: white;
+    transition: color 0.3s;
+  }
+
+  #portfolio-items .portfolio-info a:hover {
+    color: #007bff;
+  }
+
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpeg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Guddappa kasaval</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <!-- <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a> -->
+      <a href="mailto:guddappa.kasaval@gmail.com" class="email"><i class="bi bi-envelope"></i></a>
+      <a href="tel:+917975533939" class="phone"><i class="bi bi-telephone"></i></a>
+      <a href="https://www.linkedin.com/in/guddappa-kasaval-3b31a1211/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+  <ul>
+    <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+    <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+    <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+    <!-- <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li> -->
+    <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+
+    <!-- Dropdown with Companies -->
+    <li class="dropdown">
+      <a href="#portfolio"><i class="bi bi-menu-button navicon"></i> <span>Companies</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+      <ul>
+        <li><a href="#portfolio" class="portfolio-filter-link ellipsis-text" data-filter=".filter-spacetheory">SpaceTheory Solutions Pvt Ltd</a></li>
+        <li><a href="#portfolio" class="portfolio-filter-link ellipsis-text" data-filter=".filter-woodkraft">Woodkraft India Pvt Ltd</a></li>
+        <li><a href="#portfolio" class="portfolio-filter-link ellipsis-text" data-filter=".filter-brigade">Brigade Enterprises Ltd</a></li>
+        <li><a href="#portfolio" class="portfolio-filter-link ellipsis-text" data-filter=".filter-skd">SKD Interior India Pvt Ltd</a></li>
+        <li><a href="#portfolio" class="portfolio-filter-link ellipsis-text" data-filter=".filter-sharma">Sharma Kalypso Pvt Ltd</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+  </ul>
+</nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/Bench.png" alt="" data-aos="fade-in" class="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Guddappa kasaval</h2>
+        <p>I'm Senior - Project Manager</p>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Seasoned Senior Project Manager with 12+ years of expertise in interior fit-out 
+          projects across residential fitouts, commercial offices, hospitality, metro stations, and industrial spaces.
+           Adept at leading end-to-end project execution, vendor coordination, SAP-based billing workflows, and quality assurance. Known for a solution-oriented mindset, strong leadership, and stakeholder alignment from design to handover.
+</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="row gy-4 justify-content-center">
+    <!-- Profile Image -->
+    <div class="col-lg-4">
+      <img src="assets/img/my-profile-img.jpeg" class="img-fluid" alt="Profile Image">
+    </div>
+
+    <!-- Profile Content -->
+    <div class="col-lg-8 content">
+      <h2>Senior Project Manager – Interior Fit-outs & Commercial Projects</h2>
+      <p class="fst-italic py-3">
+        Seasoned professional with 12+ years of expertise in delivering high-end residential, commercial, hospitality, and metro interiors. Adept at leading end-to-end project execution, vendor coordination, SAP workflows, and quality assurance.
+      </p>
+
+      <!-- Personal Info -->
+      <div class="row">
+        <div class="col-lg-6">
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>22 Oct 1991</span></li>
+            <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
+            <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 7975533939</span></li>
+            <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Bengaluru, KA</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <strong>Languages:</strong> <span>English, Kannada, Hindi, Telugu</span></li>
+            <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>B.Tech in Architecture Engineering, Diploma in Civil Engineering</span></li>
+            <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>guddappa.kasaval@gmail.com</span></li>
+            <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Career Highlights -->
+      <h3 class="pt-3">Career Highlights</h3>
+      <ul>
+        <li>12+ years of experience in interior fit-outs across offices, hotels, metro stations, and industrial projects.</li>
+        <li>Led projects for SpaceTheory Solutions, Woodkraft India, Brigade Enterprises, SKD Interior, and Sharma Kalypso.</li>
+        <li>Expert in SAP-based billing workflows, vendor coordination, and quality inspections.</li>
+        <li>Strong leadership in stakeholder alignment, delivering projects on time and within budget.</li>
+      </ul>
+
+      <!-- Technical Skills -->
+      <h3 class="pt-3">Technical Skills</h3>
+      <p>SAP · AutoCAD · PROCORE · MS Office Suite · Quantity Surveying · Project Planning · QA/QC</p>
+
+      <!-- Personal Strengths -->
+      <h3 class="pt-3">Personal Strengths</h3>
+      <p>Solution-oriented mindset, motivated self-starter, adaptable performer, strong communication and organizational skills.</p>
+    </div>
+  </div>
+</div>
+
+    </section><!-- /About Section -->
+
+   <!-- Stats Section -->
+<section id="stats" class="stats section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item">
+          <i class="bi bi-emoji-smile"></i>
+          <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
+          <p><strong>Happy Clients</strong> <span>Qualcomm, ITC, IREO, Brigade, Technip, Databricks</span></p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item">
+          <i class="bi bi-journal-richtext"></i>
+          <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+          <p><strong>Projects</strong> <span>Commercial, Hospitality, Metro, Residential Interiors</span></p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item">
+          <i class="bi bi-headset"></i>
+          <span data-purecounter-start="0" data-purecounter-end="45000" data-purecounter-duration="1" class="purecounter"></span>
+          <p><strong>Hours Of Support</strong> <span>12+ years of project execution & client coordination</span></p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item">
+          <i class="bi bi-people"></i>
+          <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1" class="purecounter"></span>
+          <p><strong>Hard Workers</strong> <span>Cross-functional teams, vendors & site manpower</span></p>
+        </div>
+      </div><!-- End Stats Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Stats Section -->
+
+   <!-- Skills Section -->
+<section id="skills" class="skills section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Skills</h2>
+    <p>Technical expertise in project management, SAP workflows, and interior fit-out execution</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row skills-content skills-animation">
+
+      <div class="col-lg-6">
+
+        <div class="progress">
+          <span class="skill"><span>SAP</span> <i class="val">95%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>AutoCAD</span> <i class="val">85%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>PROCORE</span> <i class="val">80%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+      </div>
+
+      <div class="col-lg-6">
+
+        <div class="progress">
+          <span class="skill"><span>MS Word / Excel / PowerPoint</span> <i class="val">90%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>Project Execution & Vendor Coordination</span> <i class="val">100%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+        <div class="progress">
+          <span class="skill"><span>Quality Assurance & Compliance</span> <i class="val">100%</i></span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- End Skills Item -->
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- /Skills Section -->
+
+<!-- Resume Section -->
+<section id="resume" class="resume section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Resume</h2>
+    <p>Experienced Senior Project Manager with 12+ years in high-end interior fit-out projects across commercial, hospitality, and industrial sectors. Proven expertise in SAP workflows, vendor coordination, and quality assurance.</p>
+  <br> <br>
+    <a href="documents/GK_Resume.pdf" target="_blank" download class="download-btn">Download Resume</a>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="resume-title">Summary</h3>
+        <div class="resume-item pb-0">
+          <h4>Guddappa Kasaval</h4>
+          <p><em>Senior Project Manager specializing in commercial interiors, hotel fit-outs, and industrial spaces. Known for delivering projects ahead of schedule with premium quality and zero QA snags.</em></p>
+          <ul>
+            <li>Bengaluru, KA</li>
+            <li>+91 7975533939</li>
+            <li>guddappa.kasaval@gmail.com</li>
+          </ul>
+        </div>
+
+        <h3 class="resume-title">Education</h3>
+        <div class="resume-item">
+          <h4>B.Tech in Architecture Engineering</h4>
+          <p><em>Singhania University</em></p>
+        </div>
+        <div class="resume-item">
+          <h4>Diploma in Civil Engineering</h4>
+          <p><em>Government Polytechnic College Chitradurga</em></p>
+        </div>
+
+        <h3 class="resume-title">Technical Skills</h3>
+        <div class="resume-item">
+          <ul>
+            <li>SAP, PROCORE, AutoCAD</li>
+            <li>MS Word, Excel, PowerPoint</li>
+            <li>Project planning, vendor coordination, quality control</li>
+          </ul>
+        </div>
+
+        
+  <h4 class="resume-title" >Personnel Profile</h4>
+  <div class="resume-item">
+  <ul>
+    <li>Highly flexible and adaptable performer</li>
+    <li>Capable of working independently and collaboratively to achieve goals</li>
+    <li>Motivated self-starter and hard worker</li>
+    <li>Quick learner with ability to adopt new technologies and techniques</li>
+    <li>Strong organizational and motivational skills</li>
+    <li>Excellent communication skills</li>
+  </ul>
+</div>
+
+        <h3 class="resume-title">Languages</h3>
+        <div class="resume-item">
+          <ul>
+            <li>Kannada</li>
+            <li>English</li>
+            <li>Hindi</li>
+            <li>Telugu</li>
+          </ul>
+        </div>
+
+         
+      </div>
+
+    
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="resume-title">Professional Experience</h3>
+
+       
+        <div class="resume-item">
+  <h4>Senior Project Manager</h4>
+  <h5>Dec 2023 – Dec 2025</h5>
+  <p><em>SpaceTheory Solutions Pvt Ltd, Bangalore</em></p>
+  <ul>
+    <li>Projects: SpaceTheory Workspace (Indira Nagar), Technip (Hyderabad), Officemate Furniture Showroom (Chennai), Databricks Ph-3 (Bangalore), TEC Office Space (Chennai)</li>
+    <li>Responsibilities: Led client coordination, managed procurement (MRN), site manpower, weekly/monthly planning, quality checks, and vendor billing.</li>
+  </ul>
+</div>
+
+<div class="resume-item">
+  <h4>Project Manager</h4>
+  <h5>Nov 2022 – Nov 2023</h5>
+  <p><em>Woodkraft India Pvt Ltd, Bangalore</em></p>
+  <ul>
+    <li>Project: Qualcomm Whitefield, Bangalore</li>
+    <li>Client: Qualcomm India Pvt Ltd</li>
+    <li>Responsibilities: Managed sample approvals, MRN preparation, manpower allocation, site inspections, and vendor billing.</li>
+  </ul>
+</div>
+
+<div class="resume-item">
+  <h4>Manager – Interior Projects</h4>
+  <h5>Aug 2018 – July 2022</h5>
+  <p><em>Brigade Enterprises Ltd, Bangalore</em></p>
+  <ul>
+    <li>Projects: Brigade Seven Gardens, Brigade Panorama, Cornerstone Utopia, Citadel Hyderabad, Atmosphere Clubhouse, Orion Mall Food Court, Komarla Heights, Gem Marketing Office, Woods Clubhouse.</li>
+    <li>Responsibilities: Managed SAP workflows, vendor packages, quality inspections, audit-ready documentation, and delivered projects ahead of schedule.</li>
+  </ul>
+</div>
+
+<div class="resume-item">
+  <h4>Project Manager / Quantity Surveyor</h4>
+  <h5>Nov 2017 – Apr 2018</h5>
+  <p><em>SKD Interior India Pvt Ltd, New Delhi</em></p>
+  <ul>
+    <li>Project: IREO Mixed Use Project (Hotel, Commercial Building, Residences)</li>
+    <li>Client: IREO Hospitality Services</li>
+    <li>Responsibilities: Managed finishing works, site inspections, progress reports, client/vendor billing, and reconciliation.</li>
+  </ul>
+</div>
+
+<div class="resume-item">
+  <h4>Deputy Manager – Interiors</h4>
+  <h5>Jan 2017 – Oct 2017</h5>
+  <p><em>Sharma Kalypso Pvt Ltd, Hyderabad</em></p>
+  <ul>
+    <li>Project: ITC Kohinoor 5-Star Hotel</li>
+    <li>Client: ITC Ltd</li>
+    <li>Responsibilities: Oversaw finishing works, vendor billing, site quality checks, planning, snag closure, and project handover documentation.</li>
+  </ul>
+</div>
+
+<div class="resume-item">
+  <h4>Site Engineer / Billing Engineer / Planning Engineer</h4>
+  <h5>Aug 2013 – Jan 2017</h5>
+  <p><em>Sharma Kalypso Pvt Ltd, Bangalore</em></p>
+  <ul>
+    <li>Project: Bangalore Underground Metro Station – Architectural Finishes</li>
+    <li>Client: BMRCL (Bangalore Metro Rail Corporation Limited)</li>
+    <li>Responsibilities: Managed finishing works, material orders, MIR preparation, client meetings, vendor reconciliation, planning, snag closure, and project handover.</li>
+  </ul>
+</div>
+
+      </div>
+    </div>
+  </div>
+</section><!-- /Resume Section -->
+    <!-- Portfolio Section -->
+   <section id="portfolio" class="portfolio section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Companies</h2>
+    <p>Selected interior fit-out projects delivered across commercial, hospitality, metro, and residential sectors.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" id="">
+
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+      <!-- Portfolio Filters -->
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+        <li data-filter="*" class="filter-active">All Companies</li>
+        <li data-filter=".filter-brigade">Brigade Enterprises</li>
+        <li data-filter=".filter-skd">SKD Interior PVT LTD</li>
+        <li data-filter=".filter-sharma">Sharma Kalypso PVT LTD</li>
+        <li data-filter=".filter-woodkraft">Woodkraft India PVT LTD</li>
+        <li data-filter=".filter-spacetheory">SpaceTheory Solutions PVT LTD</li>
+      </ul><!-- End Portfolio Filters -->
+
+      <div class="row gy-4" id="portfolio-items" style="width: 100%; margin-bottom: 100px;">
+        <!-- Portfolio items will be generated dynamically by JavaScript -->
+      </div>
+
+      <!-- Pagination Controls (hidden for infinite scroll) -->
+      <div id="pagination-container">
+        <nav aria-label="Portfolio pagination">
+          <ul class="pagination" id="pagination-controls" style="display: flex; list-style: none; gap: 5px; flex-wrap: wrap; justify-content: center;">
+            <!-- Pagination buttons will be generated by JavaScript -->
+          </ul>
+        </nav>
+      </div><!-- End Pagination Controls -->
+
+    </div><!-- End isotope-layout -->
+
+  </div><!-- End container -->
+
+</section><!-- /Portfolio Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+  <p>Professional interior fit-out and project management services backed by 12+ years of experience across commercial, hospitality, metro, and residential sectors.</p>
+   </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Interior Fit-Out Execution</a></h4>
+        <p class="description">Delivering high-end residential, commercial, hospitality, and metro interiors with strict adherence to timelines and budgets.</p>
+   
+        </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Client & Consultant Coordination</a></h4>
+        <p class="description">Leading design finalization, sample approvals, and weekly review meetings to align stakeholders from concept to handover.</p>
+      </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+            <div>
+               <h4 class="title"><a href="service-details.html" class="stretched-link">Quality Assurance & Compliance</a></h4>
+        <p class="description">Conducting site inspections, snag closures, and audit-ready documentation to ensure premium finishes and compliance with standards.</p>
+          </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Material Procurement & Planning</a></h4>
+        <p class="description">Preparing MRNs, coordinating with suppliers, and driving weekly/monthly planning cycles aligned with master schedules.</p>
+      </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Vendor & Subcontractor Management</a></h4>
+        <p class="description">Reviewing and processing vendor bills, coordinating packages, and ensuring accuracy with SAP-based workflows.</p>
+       </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
+            <div>
+               <h4 class="title"><a href="service-details.html" class="stretched-link">Leadership & Team Management</a></h4>
+        <p class="description">Allocating manpower, mentoring teams, and ensuring smooth execution across multiple sites with a solution-oriented approach.</p>
+     </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Testimonials Section -->
+   <section id="testimonials" class="testimonials section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <p>Feedback and recognition from clients, consultants, and stakeholders across major interior fit-out projects.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": { "delay": 5000 },
+          "slidesPerView": "auto",
+          "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true },
+          "breakpoints": {
+            "320": { "slidesPerView": 1, "spaceBetween": 40 },
+            "1200": { "slidesPerView": 3, "spaceBetween": 1 }
+          }
+        }
+      </script>
+      <div class="swiper-wrapper">
+
+        
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+
+</section><!-- /Testimonials Section -->
+    <!-- Contact Section -->
+   <section id="contact" class="contact section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Get in touch for project collaborations, interior fit-out services, or professional inquiries.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-5">
+
+        <div class="info-wrap">
+          <!-- Address -->
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div>
+              <h3>Address</h3>
+              <p>Bengaluru, Karnataka, India</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <!-- Phone -->
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-telephone flex-shrink-0"></i>
+            <div>
+              <h3>Call</h3>
+              <p>+91 7975533939</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <!-- Email -->
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h3>Email</h3>
+              <p>guddappa.kasaval@gmail.com</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <!-- Map -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.835!2d77.560!3d13.050!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1676961268712!5m2!1sen!2sin" 
+            frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-7">
+        <form action="https://formspree.io/f/mjgarlyn" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <label for="name-field" class="pb-2">Your Name</label>
+              <input type="text" name="name" id="name-field" class="form-control" required>
+            </div>
+
+            <div class="col-md-6">
+              <label for="email-field" class="pb-2">Your Email</label>
+              <input type="email" class="form-control" name="email" id="email-field" required>
+            </div>
+
+            <div class="col-md-12">
+              <label for="subject-field" class="pb-2">Subject</label>
+              <input type="text" class="form-control" name="subject" id="subject-field" required>
+            </div>
+
+            <div class="col-md-12">
+              <label for="message-field" class="pb-2">Message</label>
+              <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <button type="submit">Send Message</button>
+            </div>
+
+          </div>
+        </form>
+      </div><!-- End Contact Form -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Contact Section -->
+
+  </main>
+
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Portfolio Filter Script with Infinite Scroll -->
+  <script>
+    let allPortfolioItems = [];
+    let filteredItems = [];
+    let currentFilter = '*';
+    let itemsLoaded = 0;
+    const ITEMS_PER_LOAD = 6;
+    let isLoading = false;
+  
+
+
+    const portfolioData = [
+      { id: 1, name: 'Brigade Enterprises', desc: 'Brigade interiors', img: 'B', count: 31, category: 'filter-brigade', imgPath: 'assets/img/Brigadegroup', gallery: 'portfolio-gallery-brigade' },
+      { id: 2, name: 'SKD Interior', desc: 'Mixed-use interiors', img: 'SKD', count: 9, category: 'filter-skd', imgPath: 'assets/img/SKDInterior', gallery: 'portfolio-gallery-skd' },
+      { id: 3, name: 'Sharma Kalypso', desc: 'Architectural finishes', img: 'SK', count: 15, category: 'filter-sharma', imgPath: 'assets/img/Sharma', gallery: 'portfolio-gallery-sharma' },
+      { id: 4, name: 'Woodkraft India', desc: 'Corporate interiors', img: 'WK', count: 17, category: 'filter-woodkraft', imgPath: 'assets/img/Woodkraft', gallery: 'portfolio-gallery-woodkraft' },
+      { id: 5, name: 'SpaceTheory Solutions', desc: 'Office interiors', img: 's', count: 49, category: 'filter-spacetheory', imgPath: 'assets/img/spacetheory', gallery: 'portfolio-gallery-spacetheory' }
+    ];
+
+  
+const ITEMS_PER_PAGE = 6;
+let currentPage = 1;
+
+function renderPaginationControls() {
+  const container = document.getElementById("pagination-controls");
+  container.innerHTML = "";
+
+  const itemsToRender = currentFilter === "*" ? allPortfolioItems : filteredItems;
+  const totalPages = Math.ceil(itemsToRender.length / ITEMS_PER_PAGE);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.style.padding = "5px 10px";
+    btn.style.cursor = "pointer";
+
+    if (i === currentPage) {
+      btn.style.backgroundColor = "#007bff";
+      btn.style.color = "#fff";
+    }
+
+    btn.addEventListener("click", () => {
+      currentPage = i;
+      loadPageItems();
+      renderPaginationControls();
+    });
+
+    li.appendChild(btn);
+    container.appendChild(li);
+  }
+}
+
+function loadPageItems() {
+  const container = document.getElementById("portfolio-items");
+  container.innerHTML = "";
+
+  const itemsToRender = currentFilter === "*" ? allPortfolioItems : filteredItems;
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, itemsToRender.length);
+  const itemsToShow = itemsToRender.slice(startIndex, endIndex);
+
+  itemsToShow.forEach(item => {
+    const itemHtml = `
+      <div class="portfolio-item isotope-item ${item.category}">
+        <div class="portfolio-content">
+          <img src="${item.imgPath}/${item.itemName}.jpeg" class="img-fluid" alt="${item.name}">
+          <div class="portfolio-info">
+            <h4>${item.name}</h4>
+            <p>${item.desc}</p>
+            <a href="${item.imgPath}/${item.itemName}.jpeg" title="${item.name}" data-gallery="${item.gallery}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+          </div>
+        </div>
+      </div>`;
+    container.innerHTML += itemHtml;
+  });
+
+  // Reinitialize GLightbox for new images
+  if (typeof GLightbox !== "undefined") {
+    GLightbox({ selector: ".glightbox" });
+  }
+}
+
+
+
+    function buildAllPortfolioItems() {
+      allPortfolioItems = [];
+      
+      portfolioData.forEach(project => {
+        for (let i = 1; i <= project.count; i++) {
+          let itemName;
+          
+          if (project.img === 'WK') {
+            itemName = `WK${i}`;
+          } else if (project.img === 'SK') {
+            itemName = `SK${i}`;
+          } else if (project.img === 'SKD') {
+            itemName = `SKD${i}`;
+          } else if (project.img === 's') {
+            itemName = i <= 10 ? `s${i}` : `S${i}`;
+          } else {
+            itemName = `${project.img}${i}`;
+          }
+          
+          allPortfolioItems.push({
+            name: project.name,
+            desc: project.desc,
+            imgPath: project.imgPath,
+            itemName: itemName,
+            category: project.category,
+            gallery: project.gallery
+          });
+        }
+      });
+      
+      filteredItems = [...allPortfolioItems];
+    }
+
+    function loadMoreItems() {
+      if (isLoading) return;
+      isLoading = true;
+      
+      const container = document.getElementById('portfolio-items');
+      if (!container) return;
+      
+      const itemsToRender = currentFilter === '*' ? allPortfolioItems : filteredItems;
+      const startIndex = itemsLoaded;
+      const endIndex = Math.min(startIndex + ITEMS_PER_LOAD, itemsToRender.length);
+      const itemsToShow = itemsToRender.slice(startIndex, endIndex);
+      
+      itemsToShow.forEach(item => {
+        const itemHtml = `
+          <div class="portfolio-item isotope-item ${item.category}">
+            <div class="portfolio-content">
+              <img src="${item.imgPath}/${item.itemName}.jpeg" class="img-fluid" alt="${item.name}">
+              <div class="portfolio-info">
+                <h4>${item.name}</h4>
+                <p>${item.desc}</p>
+                <a href="${item.imgPath}/${item.itemName}.jpeg" title="${item.name}" data-gallery="${item.gallery}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+          </div>`;
+        container.innerHTML += itemHtml;
+      });
+      
+      itemsLoaded = endIndex;
+      
+      // Reinitialize GLightbox for new images
+      if (typeof GLightbox !== 'undefined') {
+        GLightbox({ selector: '.glightbox' });
+      }
+      
+      isLoading = false;
+    }
+
+    function resetAndLoadInitial() {
+      const container = document.getElementById('portfolio-items');
+      if (!container) return;
+      
+      container.innerHTML = '';
+      itemsLoaded = 0;
+      loadPageItems();
+    }
+
+    function setupInfiniteScroll() {
+      window.addEventListener('scroll', () => {
+        const container = document.getElementById('portfolio-items');
+        if (!container) return;
+        
+        const itemsToRender = currentFilter === '*' ? allPortfolioItems : filteredItems;
+        const rect = container.getBoundingClientRect();
+        const isNearBottom = rect.bottom - window.innerHeight < 500;
+        
+        if (isNearBottom && itemsLoaded < itemsToRender.length) {
+          loadPageItems();
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      buildAllPortfolioItems();
+      resetAndLoadInitial();
+      setupInfiniteScroll();
+      
+      // Handle portfolio filter buttons
+      const filterButtons = document.querySelectorAll('.portfolio-filters li');
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          let filterValue = this.getAttribute('data-filter');
+          currentFilter = filterValue === '*' ? '*' : filterValue.replace('.', '');
+          filteredItems = currentFilter === '*' ? allPortfolioItems : allPortfolioItems.filter(item => item.category === currentFilter);
+          
+          filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+          this.classList.add('filter-active');
+          
+          resetAndLoadInitial();
+        });
+      });
+      
+      // Handle portfolio filter links from dropdown menu
+      const portfolioFilterLinks = document.querySelectorAll('.portfolio-filter-link');
+      portfolioFilterLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          let filterValue = this.getAttribute('data-filter');
+          currentFilter = filterValue === '*' ? '*' : filterValue.replace('.', '');
+          filteredItems = currentFilter === '*' ? allPortfolioItems : allPortfolioItems.filter(item => item.category === currentFilter);
+          
+          filterButtons.forEach(button => {
+            button.classList.remove('filter-active');
+            let buttonValue = button.getAttribute('data-filter') === '*' ? '*' : button.getAttribute('data-filter').replace('.', '');
+            if (buttonValue === currentFilter) {
+              button.classList.add('filter-active');
+            }
+          });
+          
+          resetAndLoadInitial();
+          setTimeout(() => {
+            document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        });
+      });
+    });
+  
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector(".php-email-form");
+  const sentMessage = form.querySelector(".sent-message");
+  const errorMessage = form.querySelector(".error-message");
+  const loading = form.querySelector(".loading");
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+  loading.style.display = "block";
+  sentMessage.style.display = "none";
+  errorMessage.style.display = "none";
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    loading.style.display = "none";
+console.log("Form submission response:", response);
+    if (response.ok) {
+      sentMessage.style.display = "block";   // ✅ show success
+      form.reset();
+    } else {
+      errorMessage.textContent = "Oops! Something went wrong.";
+      errorMessage.style.display = "block";
+    }
+  } catch (error) {
+    loading.style.display = "none";
+    errorMessage.textContent = "Network error. Please try again.";
+    errorMessage.style.display = "block";
+  }
+});
+});
+  </script>
+
+</body>
+
+</html>

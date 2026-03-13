@@ -844,7 +844,7 @@ function renderPaginationControls() {
 
     btn.addEventListener("click", () => {
       currentPage = i;
-      loadPageItems();
+      loadMoreItems();
       renderPaginationControls();
     });
 
@@ -961,7 +961,8 @@ function loadPageItems() {
       
       container.innerHTML = '';
       itemsLoaded = 0;
-      loadPageItems();
+     // loadPageItems();
+     loadMoreItems();
     }
 
     function setupInfiniteScroll() {
@@ -974,7 +975,7 @@ function loadPageItems() {
         const isNearBottom = rect.bottom - window.innerHeight < 500;
         
         if (isNearBottom && itemsLoaded < itemsToRender.length) {
-          loadPageItems();
+          loadMoreItems();
         }
       });
     }

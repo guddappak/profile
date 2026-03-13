@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - iPortfolio Bootstrap Template</title>
+  <title>Guddappa Kasaval Portfolio</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -140,8 +140,57 @@
 
   #portfolio-items .portfolio-info a:hover {
     color: #007bff;
-  }
+  } 
 
+#pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #007bff;
+  background-color: #fff;
+  color: #007bff;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50%; /* circular */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.page-btn:hover:not(:disabled) {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.page-btn.active {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.page-btn.arrow {
+  width: 50px;
+  border-radius: 20px; /* pill shape for Prev/Next */
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-dots {
+  padding: 8px 12px;
+  color: #666;
+  font-size: 14px;
+}
   </style>
 </head>
 
@@ -800,59 +849,47 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Portfolio Filter Script with Infinite Scroll -->
   <script>
-    let allPortfolioItems = [];
-    let filteredItems = [];
-    let currentFilter = '*';
-    let itemsLoaded = 0;
-    const ITEMS_PER_LOAD = 6;
-    let isLoading = false;
-  
-
-
-    const portfolioData = [
-      { id: 1, name: 'Brigade Enterprises', desc: 'Brigade interiors', img: 'B', count: 31, category: 'filter-brigade', imgPath: 'assets/img/Brigadegroup', gallery: 'portfolio-gallery-brigade' },
-      { id: 2, name: 'SKD Interior', desc: 'Mixed-use interiors', img: 'SKD', count: 9, category: 'filter-skd', imgPath: 'assets/img/SKDInterior', gallery: 'portfolio-gallery-skd' },
-      { id: 3, name: 'Sharma Kalypso', desc: 'Architectural finishes', img: 'SK', count: 15, category: 'filter-sharma', imgPath: 'assets/img/Sharma', gallery: 'portfolio-gallery-sharma' },
-      { id: 4, name: 'Woodkraft India', desc: 'Corporate interiors', img: 'WK', count: 17, category: 'filter-woodkraft', imgPath: 'assets/img/Woodkraft', gallery: 'portfolio-gallery-woodkraft' },
-      { id: 5, name: 'SpaceTheory Solutions', desc: 'Office interiors', img: 'S', count: 49, category: 'filter-spacetheory', imgPath: 'assets/img/spacetheory', gallery: 'portfolio-gallery-spacetheory' }
-    ];
-
-  
+let allPortfolioItems = [];
+let filteredItems = [];
+let currentFilter = '*';
 const ITEMS_PER_PAGE = 6;
 let currentPage = 1;
 
-function renderPaginationControls() {
-  const container = document.getElementById("pagination-controls");
-  container.innerHTML = "";
+const portfolioData = [
+  { id: 1, name: 'Brigade Enterprises', desc: 'Brigade interiors', img: 'B', count: 31, category: 'filter-brigade', imgPath: 'assets/img/Brigadegroup', gallery: 'portfolio-gallery-brigade' },
+  { id: 2, name: 'SKD Interior', desc: 'Mixed-use interiors', img: 'SKD', count: 9, category: 'filter-skd', imgPath: 'assets/img/SKDInterior', gallery: 'portfolio-gallery-skd' },
+  { id: 3, name: 'Sharma Kalypso', desc: 'Architectural finishes', img: 'SK', count: 15, category: 'filter-sharma', imgPath: 'assets/img/Sharma', gallery: 'portfolio-gallery-sharma' },
+  { id: 4, name: 'Woodkraft India', desc: 'Corporate interiors', img: 'WK', count: 17, category: 'filter-woodkraft', imgPath: 'assets/img/Woodkraft', gallery: 'portfolio-gallery-woodkraft' },
+  { id: 5, name: 'SpaceTheory Solutions', desc: 'Office interiors', img: 'S', count: 49, category: 'filter-spacetheory', imgPath: 'assets/img/spacetheory', gallery: 'portfolio-gallery-spacetheory' }
+];
 
-  const itemsToRender = currentFilter === "*" ? allPortfolioItems : filteredItems;
-  const totalPages = Math.ceil(itemsToRender.length / ITEMS_PER_PAGE);
+// Build all portfolio items
+function buildAllPortfolioItems() {
+  allPortfolioItems = [];
+  portfolioData.forEach(project => {
+    for (let i = 1; i <= project.count; i++) {
+      let itemName;
+      if (project.img === 'WK') itemName = `WK${i}`;
+      else if (project.img === 'SK') itemName = `SK${i}`;
+      else if (project.img === 'SKD') itemName = `SKD${i}`;
+      else if (project.img === 's') itemName = i <= 10 ? `s${i}` : `S${i}`;
+      else itemName = `${project.img}${i}`;
 
-  for (let i = 1; i <= totalPages; i++) {
-    const li = document.createElement("li");
-    const btn = document.createElement("button");
-    btn.textContent = i;
-    btn.style.padding = "5px 10px";
-    btn.style.cursor = "pointer";
-
-    if (i === currentPage) {
-      btn.style.backgroundColor = "#007bff";
-      btn.style.color = "#fff";
+      allPortfolioItems.push({
+        name: project.name,
+        desc: project.desc,
+        imgPath: project.imgPath,
+        itemName: itemName,
+        category: project.category,
+        gallery: project.gallery
+      });
     }
-
-    btn.addEventListener("click", () => {
-      currentPage = i;
-      loadMoreItems();
-      renderPaginationControls();
-    });
-
-    li.appendChild(btn);
-    container.appendChild(li);
-  }
+  });
+  filteredItems = [...allPortfolioItems];
 }
 
+// Load items for current page
 function loadPageItems() {
   const container = document.getElementById("portfolio-items");
   container.innerHTML = "";
@@ -862,205 +899,134 @@ function loadPageItems() {
   const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, itemsToRender.length);
   const itemsToShow = itemsToRender.slice(startIndex, endIndex);
 
+  const fragment = document.createDocumentFragment();
   itemsToShow.forEach(item => {
-    const itemHtml = `
-      <div class="portfolio-item isotope-item ${item.category}">
-        <div class="portfolio-content">
-          <img src="${item.imgPath}/${item.itemName}.jpeg" class="img-fluid" alt="${item.name}">
-          <div class="portfolio-info">
-            <h4>${item.name}</h4>
-            <p>${item.desc}</p>
-            <a href="${item.imgPath}/${item.itemName}.jpeg" title="${item.name}" data-gallery="${item.gallery}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-          </div>
+    const div = document.createElement("div");
+    div.className = `portfolio-item isotope-item ${item.category}`;
+    div.innerHTML = `
+      <div class="portfolio-content">
+        <img src="${item.imgPath}/${item.itemName}.jpeg" class="img-fluid" alt="${item.name}">
+        <div class="portfolio-info">
+          <h4>${item.name}</h4>
+          <p>${item.desc}</p>
+          <a href="${item.imgPath}/${item.itemName}.jpeg" title="${item.name}" data-gallery="${item.gallery}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
         </div>
       </div>`;
-    container.innerHTML += itemHtml;
+    fragment.appendChild(div);
   });
+  container.appendChild(fragment);
 
-  // Reinitialize GLightbox for new images
   if (typeof GLightbox !== "undefined") {
     GLightbox({ selector: ".glightbox" });
   }
 }
 
+// Render pagination controls
+function renderPaginationControls() {
+  const container = document.getElementById("pagination-controls");
+  container.innerHTML = "";
 
+  const itemsToRender = currentFilter === "*" ? allPortfolioItems : filteredItems;
+  const totalPages = Math.ceil(itemsToRender.length / ITEMS_PER_PAGE);
 
-    function buildAllPortfolioItems() {
-      allPortfolioItems = [];
-      
-      portfolioData.forEach(project => {
-        for (let i = 1; i <= project.count; i++) {
-          let itemName;
-          
-          if (project.img === 'WK') {
-            itemName = `WK${i}`;
-          } else if (project.img === 'SK') {
-            itemName = `SK${i}`;
-          } else if (project.img === 'SKD') {
-            itemName = `SKD${i}`;
-          } else if (project.img === 's') {
-            itemName = i <= 10 ? `s${i}` : `S${i}`;
-          } else {
-            itemName = `${project.img}${i}`;
-          }
-          
-          allPortfolioItems.push({
-            name: project.name,
-            desc: project.desc,
-            imgPath: project.imgPath,
-            itemName: itemName,
-            category: project.category,
-            gallery: project.gallery
-          });
-        }
-      });
-      
-      filteredItems = [...allPortfolioItems];
+  // Prev button
+  const prevBtn = document.createElement("button");
+  prevBtn.textContent = "Prev";
+  prevBtn.className = "page-btn arrow";
+  prevBtn.disabled = currentPage === 1;
+  prevBtn.onclick = () => {
+    if (currentPage > 1) {
+      currentPage--;
+      loadPageItems();
+      renderPaginationControls();
     }
+  };
+  container.appendChild(prevBtn);
 
-    function loadMoreItems() {
-      if (isLoading) return;
-      isLoading = true;
-      
-      const container = document.getElementById('portfolio-items');
-      if (!container) return;
-      
-      const itemsToRender = currentFilter === '*' ? allPortfolioItems : filteredItems;
-      const startIndex = itemsLoaded;
-      const endIndex = Math.min(startIndex + ITEMS_PER_LOAD, itemsToRender.length);
-      const itemsToShow = itemsToRender.slice(startIndex, endIndex);
-      
-      itemsToShow.forEach(item => {
-        const itemHtml = `
-          <div class="portfolio-item isotope-item ${item.category}">
-            <div class="portfolio-content">
-              <img src="${item.imgPath}/${item.itemName}.jpeg" class="img-fluid" alt="${item.name}">
-              <div class="portfolio-info">
-                <h4>${item.name}</h4>
-                <p>${item.desc}</p>
-                <a href="${item.imgPath}/${item.itemName}.jpeg" title="${item.name}" data-gallery="${item.gallery}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div>
-          </div>`;
-        container.innerHTML += itemHtml;
-      });
-      
-      itemsLoaded = endIndex;
-      
-      // Reinitialize GLightbox for new images
-      if (typeof GLightbox !== 'undefined') {
-        GLightbox({ selector: '.glightbox' });
-      }
-      
-      isLoading = false;
-    }
+  // Show first few pages, then ellipsis if needed
+  let maxVisible = 5; // show 5 pages before ellipsis
+  let startPage = Math.max(1, currentPage - 2);
+  let endPage = Math.min(totalPages, startPage + maxVisible - 1);
 
-    function resetAndLoadInitial() {
-      const container = document.getElementById('portfolio-items');
-      if (!container) return;
-      
-      container.innerHTML = '';
-      itemsLoaded = 0;
-     // loadPageItems();
-     loadMoreItems();
-    }
-
-    function setupInfiniteScroll() {
-      window.addEventListener('scroll', () => {
-        const container = document.getElementById('portfolio-items');
-        if (!container) return;
-        
-        const itemsToRender = currentFilter === '*' ? allPortfolioItems : filteredItems;
-        const rect = container.getBoundingClientRect();
-        const isNearBottom = rect.bottom - window.innerHeight < 500;
-        
-        if (isNearBottom && itemsLoaded < itemsToRender.length) {
-          loadMoreItems();
-        }
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      buildAllPortfolioItems();
-      resetAndLoadInitial();
-      setupInfiniteScroll();
-      
-      // Handle portfolio filter buttons
-      const filterButtons = document.querySelectorAll('.portfolio-filters li');
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-          e.preventDefault();
-          let filterValue = this.getAttribute('data-filter');
-          currentFilter = filterValue === '*' ? '*' : filterValue.replace('.', '');
-          filteredItems = currentFilter === '*' ? allPortfolioItems : allPortfolioItems.filter(item => item.category === currentFilter);
-          
-          filterButtons.forEach(btn => btn.classList.remove('filter-active'));
-          this.classList.add('filter-active');
-          
-          resetAndLoadInitial();
-        });
-      });
-      
-      // Handle portfolio filter links from dropdown menu
-      const portfolioFilterLinks = document.querySelectorAll('.portfolio-filter-link');
-      portfolioFilterLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          let filterValue = this.getAttribute('data-filter');
-          currentFilter = filterValue === '*' ? '*' : filterValue.replace('.', '');
-          filteredItems = currentFilter === '*' ? allPortfolioItems : allPortfolioItems.filter(item => item.category === currentFilter);
-          
-          filterButtons.forEach(button => {
-            button.classList.remove('filter-active');
-            let buttonValue = button.getAttribute('data-filter') === '*' ? '*' : button.getAttribute('data-filter').replace('.', '');
-            if (buttonValue === currentFilter) {
-              button.classList.add('filter-active');
-            }
-          });
-          
-          resetAndLoadInitial();
-          setTimeout(() => {
-            document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
-          }, 100);
-        });
-      });
-    });
-  
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.querySelector(".php-email-form");
-  const sentMessage = form.querySelector(".sent-message");
-  const errorMessage = form.querySelector(".error-message");
-  const loading = form.querySelector(".loading");
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
-  loading.style.display = "block";
-  sentMessage.style.display = "none";
-  errorMessage.style.display = "none";
-
-  try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-
-    loading.style.display = "none";
-console.log("Form submission response:", response);
-    if (response.ok) {
-      sentMessage.style.display = "block";   // ✅ show success
-      form.reset();
-    } else {
-      errorMessage.textContent = "Oops! Something went wrong.";
-      errorMessage.style.display = "block";
-    }
-  } catch (error) {
-    loading.style.display = "none";
-    errorMessage.textContent = "Network error. Please try again.";
-    errorMessage.style.display = "block";
+  if (endPage - startPage < maxVisible - 1) {
+    startPage = Math.max(1, endPage - maxVisible + 1);
   }
+
+  for (let i = startPage; i <= endPage; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.className = "page-btn";
+    if (i === currentPage) btn.classList.add("active");
+    btn.onclick = () => {
+      currentPage = i;
+      loadPageItems();
+      renderPaginationControls();
+    };
+    container.appendChild(btn);
+  }
+
+  // Ellipsis + last page
+  if (endPage < totalPages) {
+    const dots = document.createElement("span");
+    dots.textContent = "...";
+    dots.className = "page-dots";
+    container.appendChild(dots);
+
+    const lastBtn = document.createElement("button");
+    lastBtn.textContent = totalPages;
+    lastBtn.className = "page-btn";
+    if (currentPage === totalPages) lastBtn.classList.add("active");
+    lastBtn.onclick = () => {
+      currentPage = totalPages;
+      loadPageItems();
+      renderPaginationControls();
+    };
+    container.appendChild(lastBtn);
+  }
+
+  // Next button
+  const nextBtn = document.createElement("button");
+  nextBtn.textContent = "Next";
+  nextBtn.className = "page-btn arrow";
+  nextBtn.disabled = currentPage === totalPages;
+  nextBtn.onclick = () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      loadPageItems();
+      renderPaginationControls();
+    }
+  };
+  container.appendChild(nextBtn);
+}
+// Reset and load initial
+function resetAndLoadInitial() {
+  currentPage = 1;
+  renderPaginationControls();
+  loadPageItems();
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', function() {
+  buildAllPortfolioItems();
+  resetAndLoadInitial();
+
+  // Handle portfolio filter buttons
+  const filterButtons = document.querySelectorAll('.portfolio-filters li');
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      let filterValue = this.getAttribute('data-filter');
+      currentFilter = filterValue === '*' ? '*' : filterValue.replace('.', '');
+      filteredItems = currentFilter === '*' ? allPortfolioItems : allPortfolioItems.filter(item => item.category === currentFilter);
+
+      filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+      this.classList.add('filter-active');
+
+      resetAndLoadInitial();
+    });
+  });
 });
-});
-  </script>
+</script>
 
 </body>
 
